@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="shoppingApp">
+
+<head>
+<link rel="stylesheet" href="../css/bootstrap.css">
+<script type="text/javascript" src="../angular/angular.min.js"></script>
+<script type="text/javascript" src="../angular/angular-resource.min.js"></script>
+<script src="../app/app.js"></script>
+</head>
+
+<body>
+	
+	<div ng-controller="UserController">
+		<p style="font-size: 30px;">
+			This is my first Angular JS Project! <span style="color: #F6D8CE">{{
+				todaysDate | date:'longDate' }}</span>
+		</p>
+		<h1>Welcome {{ firstName | uppercase}},  {{ lastName | uppercase}}
+			!</h1>
+		First Name: <input type="text" ng-model="firstName"></input> Last
+		Name: <input type="text" ng-model="lastName"></input>
+	</div>
+	<br/><br/>
+	
+	       
+        <div ng-controller="UserDetailsController">
+           
+            
+            <table class="table table-striped table-bordered table-condensed table-hover">
+                <thead>
+
+                    <tr>
+                        <th class="warning" custom-sort order="'id'" sort="sort">Id&nbsp;</th>
+                        <th class="info" custom-sort order="'name'" sort="sort">Name&nbsp;</th>
+                        <th class="danger" custom-sort order="'description'" sort="sort">Age&nbsp;</th>
+                        <th class="success" custom-sort order="'field3'" sort="sort">Salary&nbsp;</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr ng-repeat="item in users">
+                        <td>{{item.id}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.age}}</td>
+                        <td>{{item.salary}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+	
+	
+</body>
+<br />
+<br />
+<footer>Copyright &copy; 2016 Cyber Shopping is Strictly used
+	for improving technical knowledge and build confidence at leaset for
+	interviews. All Rights Reserved.</footer>
+
+</html>
